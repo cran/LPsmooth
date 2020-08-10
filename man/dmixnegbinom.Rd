@@ -28,7 +28,7 @@ dmixnegbinom(x, pis, size, probs)
 
 }
 \details{
-The argument \code{pis} is a vector with  length equal the number of components in the mixture. The vector \code{pis} must sum up to one, e.g. \code{c(0.7, 0.2, 0.1)}.
+The argument \code{pis} is a vector with length equal the number of components in the mixture. The vector \code{pis} must sum up to one, e.g. \code{c(0.7, 0.2, 0.1)}.
 All the negative binomials contributing to the mixture are assumed to have the same \code{size}.
 }
 \value{
@@ -45,9 +45,8 @@ Xiangyu Zhang and Sara Algeri
 \examples{
 
 xx<-seq(0,30,length=31)
-dmixnegbinom(xx,pis=c(0.3,0.6,0.1),size=25,probs=c(0.3,0.4,0.2))
+dmixnegbinom(xx,pis=c(0.4,0.6),size=25,probs=c(0.6,0.7))
 
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{Mixture of negative binomials}% use one of  RShowDoc("KEYWORDS")
+% Add one or more standard keywords, see file 'KEYWORDS' in the R documentation directory.
+\keyword{Mixture of negative binomials}% use one of RShowDoc("KEYWORDS")

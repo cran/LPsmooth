@@ -148,7 +148,7 @@ find_h_cont<-function(data,g,dhat,range=NULL,M_0=NULL,par0=NULL,lbs,ubs,check.pl
   parMstar<-nloptr(x0=par0,eval_f=maxH,lb=lbs,ub=ubs,opts=opts)$solution
 
   if(check.plot==TRUE){
-    oldpar <- par(no.readonly = TRUE)
+    oldpar <- par(mfrow=c(1,2),mar=c(5,5,1.5,1))
     on.exit(par(oldpar))
     par(mfrow=c(1,2),mar=c(5,5,1.5,1))
     curve(h(x,parMstar),ylim=ylim.f,xlim=range,lwd=3,lty=3,col="mediumpurple1",ylab="Density",cex.axis=2,cex.lab=2)
@@ -233,7 +233,7 @@ find_h_disc<-function(data,g,dhat,lattice=NULL,M_0=NULL,size,par0=NULL,check.plo
     opts<-list("algorithm"="NLOPT_LN_BOBYQA","xtol_rel"=1.e-4,maxeval=200)}
   parMstar<-nloptr(x0=par0,eval_f=maxH,lb=rep(0,pp),ub=rep(1,pp),opts=opts)$solution
   if(check.plot==TRUE){
-    oldpar <- par(no.readonly = TRUE)
+    oldpar <- par(mfrow=c(1,2),mar=c(5,5,1.5,1))
     on.exit(par(oldpar))
     par(mfrow=c(1,2),mar=c(5,5,1.5,1))
     plot(lattice,h(lattice,parMstar),ylim=ylim.f,xlim=c(L,U),lwd=3,lty=3,type="o",col="mediumpurple1",ylab="Probability",xlab=expression(x),cex.axis=2,cex.lab=2,cex=2,pch=1)
@@ -465,7 +465,7 @@ CDplot<-function(data,m=4,g,par0=NULL, range=NULL,lattice=NULL, selection=TRUE,c
                                         blue=color3[3],alpha=shade, maxColorValue=250)})}
   transgreen <- Transparency("chartreuse2")
   transgrey <- Transparency("grey67")
-  oldpar <- par(no.readonly = TRUE)
+  oldpar <- par(mfrow=c(1,1),mar=c(5,6,1,1))
   on.exit(par(oldpar))
   par(mfrow=c(1,1),mar=c(5,6,1,1))
   plot(uu,ddu(uu),type="l",main=" ",ylim=ylim,ylab=expression(hat(d)(u,G,F)),xlab="u",cex.axis=2,cex.lab=2,col="darkgreen",lwd=2,xaxt='n')
