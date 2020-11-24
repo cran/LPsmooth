@@ -70,7 +70,7 @@ d_hat<-function(data,m=4,g, range=NULL,lattice=NULL, selection=TRUE,criterion="B
 }
 
 dmixtruncnorm<-function(x,pis,means,sds,range){
-  if(sum(pis)!=1)stop("The sum of the pis must be 1.")
+  if(sum(pis)-1>0.0001)stop("The sum of the pis must be 1.")
   p<-length(means)
   init<-0
   for(j in 1:p){
@@ -80,7 +80,7 @@ dmixtruncnorm<-function(x,pis,means,sds,range){
   return(h(x))}
 
 rmixtruncnorm<-function(n,pis,means,sds,range){
-  if(sum(pis)!=1)stop("The sum of the pis must be 1.")
+  if(sum(pis)-1>0.0001)stop("The sum of the pis must be 1.")
   p<-length(means)
   Mat<-matrix(rep(0,n*p),ncol=p,nrow=n)
   for(j in 1:p){
@@ -91,7 +91,7 @@ rmixtruncnorm<-function(n,pis,means,sds,range){
   return(sample)}
 
 dmixnegbinom<-function(x,pis,size,probs){
-  if(sum(pis)!=1)stop("The sum of the pis must be 1.")
+  if(sum(pis)-1>0.0001)stop("The sum of the pis must be 1.")
   p<-length(probs)
   init<-0
   for(j in 1:p){
@@ -101,7 +101,7 @@ dmixnegbinom<-function(x,pis,size,probs){
   return(h(x))}
 
 rmixnegbinom<-function(n,pis,size,probs){
-  if(sum(pis)!=1)stop("The sum of the pis must be 1.")
+  if(sum(pis)-1>0.0001)stop("The sum of the pis must be 1.")
   p<-length(probs)
   Mat<-matrix(rep(0,n*p),ncol=p,nrow=n)
   for(j in 1:p){

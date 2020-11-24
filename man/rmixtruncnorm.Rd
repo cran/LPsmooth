@@ -42,7 +42,7 @@ Sara Algeri and Xiangyu Zhang
 \code{\link{dmixtruncnorm}},\code{\link{dmixnegbinom}}, \code{\link{rmixnegbinom}}, \code{\link{find_h_cont}}.
 }
 \examples{
-rmixtruncnorm(n=100,pis=c(0.3,0.6,0.1),means=c(3,6,25),sds=c(3,4,10),range=c(0,30))
+rmixtruncnorm(n=10,pis=c(0.5,0.5),means=c(3,6),sds=c(3,4),range=c(0,30))
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
